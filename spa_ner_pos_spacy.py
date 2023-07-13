@@ -33,11 +33,11 @@ def closest_verb(entities, tokens):
                         print(" ".join([token[0] for token in tokens[start:i+1]]), end= " ")
                         j = i+1
                         while True:
-                            print(tokens[j][0], end=" ")
-                            j+=1
                             if tokens[j][1] == "PUNCT":
                                 print("\n")
                                 break
+                            print(tokens[j][0], end=" ")
+                            j+=1
                         print("-"*30)
                     else:
                       errors.append([entity[0], start, tokens[i][0], i])    
