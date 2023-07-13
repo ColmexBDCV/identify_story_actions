@@ -27,9 +27,9 @@ def closest_verb(entities, tokens):
                     range_to_check = tokens[end:i]  # +1 para incluir el token actual,
                     
                     if 'PROPN' not in [token[1] for token in range_to_check]:
-                        print(f'La entidad "{entity[0]}" en la posición "{start}" tiene el verbo más cercano "{tokens[i][0]}" en la posición "{i}".\n')
+                        print(f'La entidad "{entity[0]}" comienza en la la posición "{start}", termina en la posiciín "{end-1}" y tiene el verbo más cercano "{tokens[i][0]}" en la posición "{i}".\n')
                         
-                        #impreme frase completa para mostrar el contexto
+                        
                         print(" ".join([token[0] for token in tokens[start:i+1]]), end= " ")
                         j = i+1
                         while True:
@@ -53,7 +53,6 @@ doc = nlp(cuento)
 # Guarda en una lista las entidades nombradas y su tipo como tupla
 entities = [(ent.text, ent.label_, ent.start, ent.end) for ent in doc.ents]
 
-#cambia de modeloo
 nlp = spacy.load('es_dep_news_trf')
 
 doc = nlp(cuento)
