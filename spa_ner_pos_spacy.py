@@ -27,7 +27,7 @@ def closest_verb(entities, tokens):
                     range_to_check = tokens[end:i]  # +1 para incluir el token actual,
                     
                     if 'PROPN' not in [token[1] for token in range_to_check]:
-                        print(f'La entidad "{entity[0]}" comienza en la la posición "{start}", termina en la posiciín "{end-1}" y tiene el verbo más cercano "{tokens[i][0]}" en la posición "{i}".\n')
+                        print(f'La entidad "{entity[0]}" comienza en la la posición "{start}", termina en la posición "{end-1}" y tiene el verbo más cercano "{tokens[i][0]}" en la posición "{i}".\n')
                         
                         
                         print(" ".join([token[0] for token in tokens[start:i+1]]), end= " ")
